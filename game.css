@@ -1,4 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+/* ─── LOCAL FONT ─── */
+@font-face {
+  font-family: 'Quicksand';
+  src: url('fonts/Quicksand-VariableFont_wght.ttf') format('truetype');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* ─── RESET & BASE ─── */
 *, *::before, *::after {
@@ -424,11 +431,11 @@ body {
 
 /* ─── AD PLACEHOLDERS ─── */
 .ad-placeholder {
-  /* İleride reklam entegrasyonu için */
+  /* Reserved for future ad integration */
   min-height: 0;
   transition: min-height 0.3s;
 }
-/* Aktif olduğunda:
+/* When active:
 .ad-placeholder.active {
   min-height: 60px;
   margin: 12px 0;
