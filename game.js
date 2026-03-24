@@ -407,6 +407,7 @@
     saveStats();
 
     /* [AD_PLACEMENT: INTERSTITIAL_AD_CHECK]
+       Future: show a full-screen ad every 3 levels.
        if (state.level % 3 === 0) {
          showInterstitialAd().then(() => showLevelComplete(bonusPoints));
          return;
@@ -418,9 +419,9 @@
 
   function showLevelComplete(bonus) {
     document.getElementById('levelScoreDetail').innerHTML =
-      `Seviye ${state.level} tamamlandı!<br>` +
-      `Bonus: <strong>+${bonus}</strong> puan<br>` +
-      `Toplam Skor: <strong>${state.score}</strong>`;
+      `Level ${state.level} complete!<br>` +
+      `Bonus: <strong>+${bonus}</strong> pts<br>` +
+      `Total Score: <strong>${state.score}</strong>`;
     showOverlay($levelCompleteOverlay);
   }
 
@@ -436,15 +437,15 @@
     saveStats();
 
     document.getElementById('gameOverDetail').innerHTML =
-      `Seviye ${state.level}'de kaldın.<br>` +
-      `Skor: <strong>${state.score}</strong>`;
+      `You reached level ${state.level}.<br>` +
+      `Score: <strong>${state.score}</strong>`;
 
     /* [AD_PLACEMENT: REWARDED_AD_SETUP]
-       İleride burada ödüllü reklam butonu aktif edilecek:
+       Future: activate the rewarded ad button here.
        document.getElementById('reviveAdBtn').style.display = 'block';
        document.getElementById('reviveAdBtn').onclick = () => {
          showRewardedAd().then(() => {
-           // Bar'dan 3 slot temizle (sondan)
+           // Clear 3 slots from the bar (from the end)
            state.slots.splice(-3, 3);
            renderSlots();
            hideOverlay($gameOverOverlay);
