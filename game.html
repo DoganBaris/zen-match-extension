@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zen Match</title>
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+  <!-- TOP BAR -->
+  <header id="topBar">
+    <div class="header-left">
+      <span class="game-logo">ZEN MATCH</span>
+    </div>
+    <div class="header-center">
+      <div class="level-badge">
+        <span class="level-label">SEVİYE</span>
+        <span class="level-num" id="levelNum">1</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="score-display">
+        <span class="score-label">SKOR</span>
+        <span class="score-val" id="scoreVal">0</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- GAME BOARD -->
+  <main id="gameArea">
+    <div id="board"></div>
+  </main>
+
+  <!-- BOTTOM BAR (7 slots) -->
+  <footer id="bottomBar">
+    <div id="slotBar">
+      <div class="slot" data-index="0"></div>
+      <div class="slot" data-index="1"></div>
+      <div class="slot" data-index="2"></div>
+      <div class="slot" data-index="3"></div>
+      <div class="slot" data-index="4"></div>
+      <div class="slot" data-index="5"></div>
+      <div class="slot" data-index="6"></div>
+    </div>
+    <div class="bar-tools">
+      <button class="tool-btn" id="undoBtn" title="Geri Al (1 hak)">
+        <span class="tool-icon">↩</span>
+        <span class="tool-count" id="undoCount">3</span>
+      </button>
+      <button class="tool-btn" id="shuffleBtn" title="Karıştır">
+        <span class="tool-icon">🔀</span>
+        <span class="tool-count" id="shuffleCount">1</span>
+      </button>
+    </div>
+  </footer>
+
+  <!-- OVERLAYS -->
+  <!-- Level Complete -->
+  <div class="overlay" id="levelCompleteOverlay">
+    <div class="overlay-card success">
+      <div class="overlay-emoji">✨</div>
+      <h2>Seviye Tamamlandı!</h2>
+      <p class="overlay-detail" id="levelScoreDetail"></p>
+      <button class="overlay-btn primary" id="nextLevelBtn">Sonraki Seviye →</button>
+    </div>
+  </div>
+
+  <!-- Game Over -->
+  <div class="overlay" id="gameOverOverlay">
+    <div class="overlay-card fail">
+      <div class="overlay-emoji">😌</div>
+      <h2>Bar Doldu!</h2>
+      <p class="overlay-detail" id="gameOverDetail"></p>
+
+      <!-- [AD_PLACEMENT: REWARDED_AD]
+           İleride buraya "Reklam izle, devam et" butonu eklenecek.
+           Kullanıcı ödüllü reklam izleyerek bar'ı 3 slot boşaltabilir.
+           AdMob Rewarded veya AdSense for Games entegrasyonu yapılacak.
+      -->
+      <div class="ad-placeholder" id="reviveAdSlot">
+        <!-- <button class="overlay-btn revive" id="reviveAdBtn">🎬 Reklam İzle → Devam Et</button> -->
+      </div>
+
+      <button class="overlay-btn primary" id="retryBtn">Tekrar Dene</button>
+      <button class="overlay-btn secondary" id="menuBtn">Ana Menü</button>
+    </div>
+  </div>
+
+  <!-- Start / Menu -->
+  <div class="overlay active" id="menuOverlay">
+    <div class="overlay-card menu">
+      <div class="menu-logo">
+        <h1>ZEN MATCH</h1>
+        <p class="menu-sub">Tile Puzzle</p>
+      </div>
+      <div class="menu-stats">
+        <div class="m-stat">
+          <span class="m-val" id="menuBestLevel">1</span>
+          <span class="m-lbl">En İyi Seviye</span>
+        </div>
+        <div class="m-stat">
+          <span class="m-val" id="menuBestScore">0</span>
+          <span class="m-lbl">En İyi Skor</span>
+        </div>
+      </div>
+      <button class="overlay-btn primary big" id="startBtn">Başla</button>
+      <button class="overlay-btn secondary" id="continueBtn" style="display:none;">Devam Et (Seviye <span id="continueLevel"></span>)</button>
+
+      <!-- [AD_PLACEMENT: BANNER_AD]
+           İleride menü ekranının alt kısmına banner reklam eklenecek.
+           AdSense responsive banner veya AdMob banner birimi.
+      -->
+      <div class="ad-placeholder" id="menuBannerSlot">
+        <!-- <div class="ad-banner">Reklam Alanı</div> -->
+      </div>
+    </div>
+  </div>
+
+  <!-- [AD_PLACEMENT: INTERSTITIAL_AD]
+       Her 3 seviyede bir (seviye 3, 6, 9...) seviye geçiş ekranında
+       tam sayfa interstitial reklam gösterilecek.
+       AdMob Interstitial veya AdSense tam sayfa birimi.
+  -->
+
+  <script src="game.js"></script>
+</body>
+</html>
