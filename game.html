@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,13 +14,13 @@
     </div>
     <div class="header-center">
       <div class="level-badge">
-        <span class="level-label">SEVİYE</span>
+        <span class="level-label">LEVEL</span>
         <span class="level-num" id="levelNum">1</span>
       </div>
     </div>
     <div class="header-right">
       <div class="score-display">
-        <span class="score-label">SKOR</span>
+        <span class="score-label">SCORE</span>
         <span class="score-val" id="scoreVal">0</span>
       </div>
     </div>
@@ -43,11 +43,11 @@
       <div class="slot" data-index="6"></div>
     </div>
     <div class="bar-tools">
-      <button class="tool-btn" id="undoBtn" title="Geri Al (1 hak)">
+      <button class="tool-btn" id="undoBtn" title="Undo">
         <span class="tool-icon">↩</span>
         <span class="tool-count" id="undoCount">3</span>
       </button>
-      <button class="tool-btn" id="shuffleBtn" title="Karıştır">
+      <button class="tool-btn" id="shuffleBtn" title="Shuffle">
         <span class="tool-icon">🔀</span>
         <span class="tool-count" id="shuffleCount">1</span>
       </button>
@@ -59,9 +59,9 @@
   <div class="overlay" id="levelCompleteOverlay">
     <div class="overlay-card success">
       <div class="overlay-emoji">✨</div>
-      <h2>Seviye Tamamlandı!</h2>
+      <h2>Level Complete!</h2>
       <p class="overlay-detail" id="levelScoreDetail"></p>
-      <button class="overlay-btn primary" id="nextLevelBtn">Sonraki Seviye →</button>
+      <button class="overlay-btn primary" id="nextLevelBtn">Next Level →</button>
     </div>
   </div>
 
@@ -69,20 +69,20 @@
   <div class="overlay" id="gameOverOverlay">
     <div class="overlay-card fail">
       <div class="overlay-emoji">😌</div>
-      <h2>Bar Doldu!</h2>
+      <h2>Bar Full!</h2>
       <p class="overlay-detail" id="gameOverDetail"></p>
 
       <!-- [AD_PLACEMENT: REWARDED_AD]
-           İleride buraya "Reklam izle, devam et" butonu eklenecek.
-           Kullanıcı ödüllü reklam izleyerek bar'ı 3 slot boşaltabilir.
-           AdMob Rewarded veya AdSense for Games entegrasyonu yapılacak.
+           Future: "Watch ad to continue" button goes here.
+           User watches a rewarded ad to clear 3 slots from the bar.
+           AdMob Rewarded or AdSense for Games integration.
       -->
       <div class="ad-placeholder" id="reviveAdSlot">
-        <!-- <button class="overlay-btn revive" id="reviveAdBtn">🎬 Reklam İzle → Devam Et</button> -->
+        <!-- <button class="overlay-btn revive" id="reviveAdBtn">🎬 Watch Ad → Continue</button> -->
       </div>
 
-      <button class="overlay-btn primary" id="retryBtn">Tekrar Dene</button>
-      <button class="overlay-btn secondary" id="menuBtn">Ana Menü</button>
+      <button class="overlay-btn primary" id="retryBtn">Try Again</button>
+      <button class="overlay-btn secondary" id="menuBtn">Main Menu</button>
     </div>
   </div>
 
@@ -96,30 +96,29 @@
       <div class="menu-stats">
         <div class="m-stat">
           <span class="m-val" id="menuBestLevel">1</span>
-          <span class="m-lbl">En İyi Seviye</span>
+          <span class="m-lbl">Best Level</span>
         </div>
         <div class="m-stat">
           <span class="m-val" id="menuBestScore">0</span>
-          <span class="m-lbl">En İyi Skor</span>
+          <span class="m-lbl">Best Score</span>
         </div>
       </div>
-      <button class="overlay-btn primary big" id="startBtn">Başla</button>
-      <button class="overlay-btn secondary" id="continueBtn" style="display:none;">Devam Et (Seviye <span id="continueLevel"></span>)</button>
+      <button class="overlay-btn primary big" id="startBtn">Play</button>
+      <button class="overlay-btn secondary" id="continueBtn" style="display:none;">Continue (Level <span id="continueLevel"></span>)</button>
 
       <!-- [AD_PLACEMENT: BANNER_AD]
-           İleride menü ekranının alt kısmına banner reklam eklenecek.
-           AdSense responsive banner veya AdMob banner birimi.
+           Future: banner ad at the bottom of the menu screen.
+           AdSense responsive banner or AdMob banner unit.
       -->
       <div class="ad-placeholder" id="menuBannerSlot">
-        <!-- <div class="ad-banner">Reklam Alanı</div> -->
+        <!-- <div class="ad-banner">Ad Slot</div> -->
       </div>
     </div>
   </div>
 
   <!-- [AD_PLACEMENT: INTERSTITIAL_AD]
-       Her 3 seviyede bir (seviye 3, 6, 9...) seviye geçiş ekranında
-       tam sayfa interstitial reklam gösterilecek.
-       AdMob Interstitial veya AdSense tam sayfa birimi.
+       Future: full-screen interstitial ad every 3 levels (3, 6, 9...).
+       AdMob Interstitial or AdSense full-page unit.
   -->
 
   <script src="game.js"></script>
