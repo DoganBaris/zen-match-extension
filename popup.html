@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+    @font-face {
+      font-family: 'Quicksand';
+      src: url('fonts/Quicksand-VariableFont_wght.ttf') format('truetype');
+      font-weight: 400 700;
+      font-style: normal;
+      font-display: swap;
+    }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -102,19 +108,19 @@
   <div class="stats">
     <div class="stat">
       <div class="stat-val" id="bestLevel">1</div>
-      <div class="stat-label">En İyi Seviye</div>
+      <div class="stat-label">Best Level</div>
     </div>
     <div class="stat">
       <div class="stat-val" id="bestScore">0</div>
-      <div class="stat-label">En İyi Skor</div>
+      <div class="stat-label">Best Score</div>
     </div>
     <div class="stat">
       <div class="stat-val" id="totalGames">0</div>
-      <div class="stat-label">Toplam Oyun</div>
+      <div class="stat-label">Total Games</div>
     </div>
   </div>
 
-  <button class="play-btn" id="playBtn">▶ Oyna</button>
+  <button class="play-btn" id="playBtn">▶ Play</button>
 
   <div class="version">v1.0.0</div>
 
